@@ -1,0 +1,79 @@
+# Reading D:/altera/13.1/modelsim_ase/tcl/vsim/pref.tcl 
+# do M_Player_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/Project/Verilog/M_Player/source_code {D:/Project/Verilog/M_Player/source_code/CNT138T.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module CNT138T
+# 
+# Top level modules:
+# 	CNT138T
+# vlog -vlog01compat -work work +incdir+D:/Project/Verilog/M_Player/source_code {D:/Project/Verilog/M_Player/source_code/F_CODE.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module F_CODE
+# 
+# Top level modules:
+# 	F_CODE
+# vlog -vlog01compat -work work +incdir+D:/Project/Verilog/M_Player/source_code {D:/Project/Verilog/M_Player/source_code/SPKER.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module SPKER
+# 
+# Top level modules:
+# 	SPKER
+# vlog -vlog01compat -work work +incdir+D:/Project/Verilog/M_Player/ip_core/rom {D:/Project/Verilog/M_Player/ip_core/rom/rom_controller.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module rom_controller
+# 
+# Top level modules:
+# 	rom_controller
+# vlog -vlog01compat -work work +incdir+D:/Project/Verilog/M_Player/source_code {D:/Project/Verilog/M_Player/source_code/test.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module test
+# 
+# Top level modules:
+# 	test
+# 
+# vlog -vlog01compat -work work +incdir+D:/Project/Verilog/M_Player/source_code {D:/Project/Verilog/M_Player/source_code/test_tb.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module test_tb
+# 
+# Top level modules:
+# 	test_tb
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs="+acc"  test_tb
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneive_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps test_tb 
+# Loading work.test_tb
+# Loading work.test
+# Loading work.CNT138T
+# Loading work.rom_controller
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# Loading work.F_CODE
+# Loading work.SPKER
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "./source_code/rom_init.mif" for reading.
+# 
+# No such file or directory. (errno = ENOENT)    : D:/altera/13.1/modelsim_ase/win32aloem/../altera/verilog/src/altera_mf.v(187)
+#    Time: 0 ps  Iteration: 0  Instance: /test_tb/u1/uut_rom_controller/altsyncram_component
+# ERROR: cannot read ./source_code/rom_init.mif.
+# ** Warning: (vsim-7) Failed to open readmem file "./source_code/rom_init.ver" in read mode.
+# 
+# No such file or directory. (errno = ENOENT)    : D:/altera/13.1/modelsim_ase/win32aloem/../altera/verilog/src/altera_mf.v(45506)
+#    Time: 0 ps  Iteration: 0  Instance: /test_tb/u1/uut_rom_controller/altsyncram_component
+# Break key hit 
+# Break in Module test_tb at D:/Project/Verilog/M_Player/source_code/test_tb.v line 23

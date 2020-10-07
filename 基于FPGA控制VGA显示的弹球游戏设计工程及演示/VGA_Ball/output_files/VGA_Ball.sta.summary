@@ -1,0 +1,137 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'vga_controller:vga_controller_inst|oVGA_VS'
+Slack : -9.361
+TNS   : -194.440
+
+Type  : Slow 1200mV 85C Model Setup 'ext_clk_25m'
+Slack : -6.888
+TNS   : -411.010
+
+Type  : Slow 1200mV 85C Model Setup 'vga_controller:vga_controller_inst|oV_cnt[0]'
+Slack : -6.171
+TNS   : -12.210
+
+Type  : Slow 1200mV 85C Model Hold 'ext_clk_25m'
+Slack : -1.632
+TNS   : -12.586
+
+Type  : Slow 1200mV 85C Model Hold 'vga_controller:vga_controller_inst|oV_cnt[0]'
+Slack : -1.202
+TNS   : -2.353
+
+Type  : Slow 1200mV 85C Model Hold 'vga_controller:vga_controller_inst|oVGA_VS'
+Slack : 0.435
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'vga_controller:vga_controller_inst|oV_cnt[0]'
+Slack : -1.799
+TNS   : -3.570
+
+Type  : Slow 1200mV 85C Model Removal 'vga_controller:vga_controller_inst|oV_cnt[0]'
+Slack : -2.816
+TNS   : -5.606
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ext_clk_25m'
+Slack : -3.000
+TNS   : -178.466
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'vga_controller:vga_controller_inst|oVGA_VS'
+Slack : -1.487
+TNS   : -52.045
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'vga_controller:vga_controller_inst|oV_cnt[0]'
+Slack : 0.293
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'vga_controller:vga_controller_inst|oVGA_VS'
+Slack : -8.513
+TNS   : -175.855
+
+Type  : Slow 1200mV 0C Model Setup 'ext_clk_25m'
+Slack : -6.355
+TNS   : -376.843
+
+Type  : Slow 1200mV 0C Model Setup 'vga_controller:vga_controller_inst|oV_cnt[0]'
+Slack : -6.047
+TNS   : -11.969
+
+Type  : Slow 1200mV 0C Model Hold 'ext_clk_25m'
+Slack : -1.476
+TNS   : -11.407
+
+Type  : Slow 1200mV 0C Model Hold 'vga_controller:vga_controller_inst|oV_cnt[0]'
+Slack : -1.066
+TNS   : -2.028
+
+Type  : Slow 1200mV 0C Model Hold 'vga_controller:vga_controller_inst|oVGA_VS'
+Slack : 0.385
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'vga_controller:vga_controller_inst|oV_cnt[0]'
+Slack : -1.882
+TNS   : -3.735
+
+Type  : Slow 1200mV 0C Model Removal 'vga_controller:vga_controller_inst|oV_cnt[0]'
+Slack : -2.473
+TNS   : -4.919
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ext_clk_25m'
+Slack : -3.000
+TNS   : -178.466
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'vga_controller:vga_controller_inst|oVGA_VS'
+Slack : -1.487
+TNS   : -52.045
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'vga_controller:vga_controller_inst|oV_cnt[0]'
+Slack : -0.035
+TNS   : -0.065
+
+Type  : Fast 1200mV 0C Model Setup 'vga_controller:vga_controller_inst|oVGA_VS'
+Slack : -3.526
+TNS   : -66.018
+
+Type  : Fast 1200mV 0C Model Setup 'ext_clk_25m'
+Slack : -2.478
+TNS   : -122.975
+
+Type  : Fast 1200mV 0C Model Setup 'vga_controller:vga_controller_inst|oV_cnt[0]'
+Slack : -2.289
+TNS   : -4.499
+
+Type  : Fast 1200mV 0C Model Hold 'ext_clk_25m'
+Slack : -0.915
+TNS   : -7.408
+
+Type  : Fast 1200mV 0C Model Hold 'vga_controller:vga_controller_inst|oV_cnt[0]'
+Slack : -0.843
+TNS   : -1.680
+
+Type  : Fast 1200mV 0C Model Hold 'vga_controller:vga_controller_inst|oVGA_VS'
+Slack : 0.179
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'vga_controller:vga_controller_inst|oV_cnt[0]'
+Slack : -0.394
+TNS   : -0.788
+
+Type  : Fast 1200mV 0C Model Removal 'vga_controller:vga_controller_inst|oV_cnt[0]'
+Slack : -1.406
+TNS   : -2.811
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ext_clk_25m'
+Slack : -3.000
+TNS   : -128.486
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'vga_controller:vga_controller_inst|oVGA_VS'
+Slack : -1.000
+TNS   : -35.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'vga_controller:vga_controller_inst|oV_cnt[0]'
+Slack : 0.213
+TNS   : 0.000
+
+------------------------------------------------------------

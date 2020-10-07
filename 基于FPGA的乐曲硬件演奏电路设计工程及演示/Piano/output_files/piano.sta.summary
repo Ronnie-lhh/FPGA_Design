@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'SPKER:SPKER_inst|SPKS'
+Slack : 0.114
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'ext_clk_25m'
+Slack : 33.781
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Setup 'pll_controller_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 34.660
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ext_clk_25m'
+Slack : 0.465
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'SPKER:SPKER_inst|SPKS'
+Slack : 0.497
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'pll_controller_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.744
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SPKER:SPKER_inst|SPKS'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ext_clk_25m'
+Slack : 19.783
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pll_controller_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 499.718
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'SPKER:SPKER_inst|SPKS'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'ext_clk_25m'
+Slack : 34.185
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'pll_controller_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 35.198
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ext_clk_25m'
+Slack : 0.416
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'SPKER:SPKER_inst|SPKS'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'pll_controller_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.692
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SPKER:SPKER_inst|SPKS'
+Slack : -1.487
+TNS   : -1.487
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ext_clk_25m'
+Slack : 19.772
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pll_controller_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 499.718
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'SPKER:SPKER_inst|SPKS'
+Slack : 0.626
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'ext_clk_25m'
+Slack : 37.362
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'pll_controller_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 37.516
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ext_clk_25m'
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'SPKER:SPKER_inst|SPKS'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pll_controller_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.297
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SPKER:SPKER_inst|SPKS'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ext_clk_25m'
+Slack : 19.435
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pll_controller_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 499.798
+TNS   : 0.000
+
+------------------------------------------------------------

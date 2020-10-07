@@ -1,0 +1,1136 @@
+Analysis & Synthesis report for VGA_Ball
+Sun Sep 06 17:26:17 2020
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |VGA_Ball|arykeyscan:arykeyscan_inst|cstate
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for color_gen:color_gen_inst
+ 16. Source assignments for Ball:Ball_inst
+ 17. Parameter Settings for User Entity Instance: arykeyscan:arykeyscan_inst
+ 18. Parameter Settings for User Entity Instance: color_gen:color_gen_inst
+ 19. Parameter Settings for User Entity Instance: state_run:state_run_inst
+ 20. Parameter Settings for User Entity Instance: Ball:Ball_inst
+ 21. Parameter Settings for User Entity Instance: block:block_inst
+ 22. Parameter Settings for User Entity Instance: color_gen_char1:color_gen_char1_inst
+ 23. Parameter Settings for User Entity Instance: color_gen_char2:color_gen_char2_inst
+ 24. Parameter Settings for User Entity Instance: vga_controller:vga_controller_inst
+ 25. Parameter Settings for Inferred Entity Instance: color_gen:color_gen_inst|lpm_mult:Mult2
+ 26. Parameter Settings for Inferred Entity Instance: color_gen:color_gen_inst|lpm_mult:Mult0
+ 27. Parameter Settings for Inferred Entity Instance: color_gen:color_gen_inst|lpm_mult:Mult1
+ 28. lpm_mult Parameter Settings by Entity Instance
+ 29. Port Connectivity Checks: "color_gen:color_gen_inst"
+ 30. Port Connectivity Checks: "Background_Color:Background_Color_inst"
+ 31. Elapsed Time Per Partition
+ 32. Analysis & Synthesis Messages
+ 33. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Sep 06 17:26:17 2020       ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Full Version ;
+; Revision Name                      ; VGA_Ball                                    ;
+; Top-level Entity Name              ; VGA_Ball                                    ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 1,148                                       ;
+;     Total combinational functions  ; 1,140                                       ;
+;     Dedicated logic registers      ; 153                                         ;
+; Total registers                    ; 153                                         ;
+; Total pins                         ; 19                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 5                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE6E22C8        ;                    ;
+; Top-level entity name                                                      ; VGA_Ball           ; VGA_Ball           ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                   ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+---------+
+; source_code/vga_controller.v     ; yes             ; User Verilog HDL File        ; D:/Project/Verilog/VGA_Ball/source_code/vga_controller.v       ;         ;
+; source_code/VGA_Ball.v           ; yes             ; User Verilog HDL File        ; D:/Project/Verilog/VGA_Ball/source_code/VGA_Ball.v             ;         ;
+; source_code/state_run.v          ; yes             ; User Verilog HDL File        ; D:/Project/Verilog/VGA_Ball/source_code/state_run.v            ;         ;
+; source_code/sigkeyscan.v         ; yes             ; User Verilog HDL File        ; D:/Project/Verilog/VGA_Ball/source_code/sigkeyscan.v           ;         ;
+; source_code/LTM_Param.h          ; yes             ; User Unspecified File        ; D:/Project/Verilog/VGA_Ball/source_code/LTM_Param.h            ;         ;
+; source_code/game_start.v         ; yes             ; User Verilog HDL File        ; D:/Project/Verilog/VGA_Ball/source_code/game_start.v           ;         ;
+; source_code/color_gen_char2.v    ; yes             ; User Verilog HDL File        ; D:/Project/Verilog/VGA_Ball/source_code/color_gen_char2.v      ;         ;
+; source_code/color_gen_char1.v    ; yes             ; User Verilog HDL File        ; D:/Project/Verilog/VGA_Ball/source_code/color_gen_char1.v      ;         ;
+; source_code/color_gen.v          ; yes             ; User Verilog HDL File        ; D:/Project/Verilog/VGA_Ball/source_code/color_gen.v            ;         ;
+; source_code/block_move.v         ; yes             ; User Verilog HDL File        ; D:/Project/Verilog/VGA_Ball/source_code/block_move.v           ;         ;
+; source_code/block.v              ; yes             ; User Verilog HDL File        ; D:/Project/Verilog/VGA_Ball/source_code/block.v                ;         ;
+; source_code/Begin.h              ; yes             ; User Unspecified File        ; D:/Project/Verilog/VGA_Ball/source_code/Begin.h                ;         ;
+; source_code/Ball_speed.v         ; yes             ; User Verilog HDL File        ; D:/Project/Verilog/VGA_Ball/source_code/Ball_speed.v           ;         ;
+; source_code/Ball.v               ; yes             ; User Verilog HDL File        ; D:/Project/Verilog/VGA_Ball/source_code/Ball.v                 ;         ;
+; source_code/Background_Color.v   ; yes             ; User Verilog HDL File        ; D:/Project/Verilog/VGA_Ball/source_code/Background_Color.v     ;         ;
+; source_code/arykeyscan.v         ; yes             ; User Verilog HDL File        ; D:/Project/Verilog/VGA_Ball/source_code/arykeyscan.v           ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/lpm_mult.tdf    ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc  ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/lpm_add_sub.inc ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/multcore.inc    ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/bypassff.inc    ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; d:/altera/13.1/quartus/libraries/megafunctions/altshift.inc    ;         ;
+; db/mult_aat.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/Project/Verilog/VGA_Ball/db/mult_aat.tdf                    ;         ;
+; db/mult_t5t.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/Project/Verilog/VGA_Ball/db/mult_t5t.tdf                    ;         ;
+; db/mult_p5t.tdf                  ; yes             ; Auto-Generated Megafunction  ; D:/Project/Verilog/VGA_Ball/db/mult_p5t.tdf                    ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                ;
++---------------------------------------------+----------------------------------------------+
+; Resource                                    ; Usage                                        ;
++---------------------------------------------+----------------------------------------------+
+; Estimated Total logic elements              ; 1,148                                        ;
+;                                             ;                                              ;
+; Total combinational functions               ; 1140                                         ;
+; Logic element usage by number of LUT inputs ;                                              ;
+;     -- 4 input functions                    ; 659                                          ;
+;     -- 3 input functions                    ; 306                                          ;
+;     -- <=2 input functions                  ; 175                                          ;
+;                                             ;                                              ;
+; Logic elements by mode                      ;                                              ;
+;     -- normal mode                          ; 842                                          ;
+;     -- arithmetic mode                      ; 298                                          ;
+;                                             ;                                              ;
+; Total registers                             ; 153                                          ;
+;     -- Dedicated logic registers            ; 153                                          ;
+;     -- I/O registers                        ; 0                                            ;
+;                                             ;                                              ;
+; I/O pins                                    ; 19                                           ;
+; Embedded Multiplier 9-bit elements          ; 5                                            ;
+; Maximum fan-out node                        ; vga_controller:vga_controller_inst|oH_cnt[0] ;
+; Maximum fan-out                             ; 242                                          ;
+; Total fan-out                               ; 4487                                         ;
+; Average fan-out                             ; 3.36                                         ;
++---------------------------------------------+----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                ;
++---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                       ; Library Name ;
++---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
+; |VGA_Ball                                   ; 1140 (0)          ; 153 (0)      ; 0           ; 5            ; 1       ; 2         ; 19   ; 0            ; |VGA_Ball                                                                 ; work         ;
+;    |Background_Color:Background_Color_inst| ; 4 (4)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_Ball|Background_Color:Background_Color_inst                          ; work         ;
+;    |Ball:Ball_inst|                         ; 172 (172)         ; 35 (35)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_Ball|Ball:Ball_inst                                                  ; work         ;
+;    |Ball_speed:Ball_speed_inst|             ; 21 (21)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_Ball|Ball_speed:Ball_speed_inst                                      ; work         ;
+;    |arykeyscan:arykeyscan_inst|             ; 60 (26)           ; 51 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_Ball|arykeyscan:arykeyscan_inst                                      ; work         ;
+;       |sigkeyscan:uut_sigkeyscan|           ; 34 (34)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_Ball|arykeyscan:arykeyscan_inst|sigkeyscan:uut_sigkeyscan            ; work         ;
+;    |block:block_inst|                       ; 106 (106)         ; 28 (28)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_Ball|block:block_inst                                                ; work         ;
+;    |block_move:block_move_inst|             ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_Ball|block_move:block_move_inst                                      ; work         ;
+;    |color_gen:color_gen_inst|               ; 92 (92)           ; 0 (0)        ; 0           ; 5            ; 1       ; 2         ; 0    ; 0            ; |VGA_Ball|color_gen:color_gen_inst                                        ; work         ;
+;       |lpm_mult:Mult0|                      ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |VGA_Ball|color_gen:color_gen_inst|lpm_mult:Mult0                         ; work         ;
+;          |mult_t5t:auto_generated|          ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |VGA_Ball|color_gen:color_gen_inst|lpm_mult:Mult0|mult_t5t:auto_generated ; work         ;
+;       |lpm_mult:Mult1|                      ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |VGA_Ball|color_gen:color_gen_inst|lpm_mult:Mult1                         ; work         ;
+;          |mult_p5t:auto_generated|          ; 0 (0)             ; 0 (0)        ; 0           ; 2            ; 0       ; 1         ; 0    ; 0            ; |VGA_Ball|color_gen:color_gen_inst|lpm_mult:Mult1|mult_p5t:auto_generated ; work         ;
+;       |lpm_mult:Mult2|                      ; 0 (0)             ; 0 (0)        ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |VGA_Ball|color_gen:color_gen_inst|lpm_mult:Mult2                         ; work         ;
+;          |mult_aat:auto_generated|          ; 0 (0)             ; 0 (0)        ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |VGA_Ball|color_gen:color_gen_inst|lpm_mult:Mult2|mult_aat:auto_generated ; work         ;
+;    |color_gen_char1:color_gen_char1_inst|   ; 316 (316)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_Ball|color_gen_char1:color_gen_char1_inst                            ; work         ;
+;    |color_gen_char2:color_gen_char2_inst|   ; 310 (310)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_Ball|color_gen_char2:color_gen_char2_inst                            ; work         ;
+;    |game_start:game_start_inst|             ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_Ball|game_start:game_start_inst                                      ; work         ;
+;    |state_run:state_run_inst|               ; 3 (3)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_Ball|state_run:state_run_inst                                        ; work         ;
+;    |vga_controller:vga_controller_inst|     ; 52 (52)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA_Ball|vga_controller:vga_controller_inst                              ; work         ;
++---------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 1           ;
+; Simple Multipliers (18-bit)           ; 2           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 5           ;
+; Signed Embedded Multipliers           ; 2           ;
+; Unsigned Embedded Multipliers         ; 1           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------+
+; State Machine - |VGA_Ball|arykeyscan:arykeyscan_inst|cstate                                                   ;
++---------------+---------------+---------------+---------------+---------------+---------------+---------------+
+; Name          ; cstate.K_CHCK ; cstate.K_H4OL ; cstate.K_H3OL ; cstate.K_H2OL ; cstate.K_H1OL ; cstate.K_IDLE ;
++---------------+---------------+---------------+---------------+---------------+---------------+---------------+
+; cstate.K_IDLE ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ;
+; cstate.K_H1OL ; 0             ; 0             ; 0             ; 0             ; 1             ; 1             ;
+; cstate.K_H2OL ; 0             ; 0             ; 0             ; 1             ; 0             ; 1             ;
+; cstate.K_H3OL ; 0             ; 0             ; 1             ; 0             ; 0             ; 1             ;
+; cstate.K_H4OL ; 0             ; 1             ; 0             ; 0             ; 0             ; 1             ;
+; cstate.K_CHCK ; 1             ; 0             ; 0             ; 0             ; 0             ; 1             ;
++---------------+---------------+---------------+---------------+---------------+---------------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                         ;
++----------------------------------------------------+-----------------------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal                           ; Free of Timing Hazards ;
++----------------------------------------------------+-----------------------------------------------+------------------------+
+; color_gen_char1:color_gen_char1_inst|oVGA_R        ; color_gen_char1:color_gen_char1_inst|WideNor0 ; yes                    ;
+; color_gen_char2:color_gen_char2_inst|oVGA_R        ; color_gen_char1:color_gen_char1_inst|WideNor0 ; yes                    ;
+; color_gen_char1:color_gen_char1_inst|oVGA_B        ; GND                                           ; yes                    ;
+; color_gen_char2:color_gen_char2_inst|oVGA_B        ; GND                                           ; yes                    ;
+; Number of user-specified and inferred latches = 4  ;                                               ;                        ;
++----------------------------------------------------+-----------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                    ;
++---------------------------------------------+---------------------------------------------------------+
+; Register name                               ; Reason for Removal                                      ;
++---------------------------------------------+---------------------------------------------------------+
+; game_start:game_start_inst|oDISPLAY_PAGE[1] ; Merged with game_start:game_start_inst|oDISPLAY_PAGE[0] ;
+; Ball:Ball_inst|Y[5..9]                      ; Merged with Ball:Ball_inst|Y[4]                         ;
+; Ball:Ball_inst|X[4..9]                      ; Merged with Ball:Ball_inst|X[10]                        ;
+; arykeyscan:arykeyscan_inst|cstate~4         ; Lost fanout                                             ;
+; arykeyscan:arykeyscan_inst|cstate~5         ; Lost fanout                                             ;
+; arykeyscan:arykeyscan_inst|cstate~6         ; Lost fanout                                             ;
+; arykeyscan:arykeyscan_inst|cstate~7         ; Lost fanout                                             ;
+; Total Number of Removed Registers = 16      ;                                                         ;
++---------------------------------------------+---------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 153   ;
+; Number of registers using Synchronous Clear  ; 41    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 153   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 63    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                   ;
++----------------------------------------------------------------------+---------+
+; Inverted Register                                                    ; Fan out ;
++----------------------------------------------------------------------+---------+
+; block:block_inst|block_X[6]                                          ; 8       ;
+; block:block_inst|block_X[5]                                          ; 9       ;
+; block:block_inst|block_X[2]                                          ; 6       ;
+; Ball:Ball_inst|Ball_X[0]                                             ; 7       ;
+; Ball:Ball_inst|Ball_X[2]                                             ; 7       ;
+; Ball:Ball_inst|Ball_X[3]                                             ; 7       ;
+; Ball:Ball_inst|Ball_X[6]                                             ; 7       ;
+; Ball:Ball_inst|Ball_X[7]                                             ; 7       ;
+; Ball:Ball_inst|Ball_X[8]                                             ; 7       ;
+; Ball:Ball_inst|Ball_Y[0]                                             ; 5       ;
+; Ball:Ball_inst|Ball_Y[4]                                             ; 5       ;
+; Ball:Ball_inst|Ball_Y[8]                                             ; 5       ;
+; state_run:state_run_inst|current_state[0]                            ; 5       ;
+; Background_Color:Background_Color_inst|oBackground_set[0]            ; 4       ;
+; Background_Color:Background_Color_inst|oBackground_set[1]            ; 3       ;
+; arykeyscan:arykeyscan_inst|display_num[0]                            ; 11      ;
+; arykeyscan:arykeyscan_inst|display_num[3]                            ; 12      ;
+; arykeyscan:arykeyscan_inst|display_num[1]                            ; 12      ;
+; arykeyscan:arykeyscan_inst|display_num[2]                            ; 12      ;
+; arykeyscan:arykeyscan_inst|sigkeyscan:uut_sigkeyscan|key_value[0][0] ; 2       ;
+; arykeyscan:arykeyscan_inst|sigkeyscan:uut_sigkeyscan|key_value[0][1] ; 2       ;
+; arykeyscan:arykeyscan_inst|sigkeyscan:uut_sigkeyscan|key_value[1][0] ; 1       ;
+; arykeyscan:arykeyscan_inst|sigkeyscan:uut_sigkeyscan|key_value[1][1] ; 1       ;
+; arykeyscan:arykeyscan_inst|sigkeyscan:uut_sigkeyscan|key_value[0][2] ; 2       ;
+; arykeyscan:arykeyscan_inst|sigkeyscan:uut_sigkeyscan|key_value[0][3] ; 2       ;
+; arykeyscan:arykeyscan_inst|sigkeyscan:uut_sigkeyscan|key_value[1][2] ; 1       ;
+; arykeyscan:arykeyscan_inst|sigkeyscan:uut_sigkeyscan|key_value[1][3] ; 1       ;
+; arykeyscan:arykeyscan_inst|sigkeyscan:uut_sigkeyscan|keyr[3]         ; 1       ;
+; arykeyscan:arykeyscan_inst|sigkeyscan:uut_sigkeyscan|keyr[2]         ; 2       ;
+; arykeyscan:arykeyscan_inst|sigkeyscan:uut_sigkeyscan|keyr[1]         ; 1       ;
+; arykeyscan:arykeyscan_inst|sigkeyscan:uut_sigkeyscan|keyr[0]         ; 1       ;
+; Total number of inverted registers = 31                              ;         ;
++----------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |VGA_Ball|arykeyscan:arykeyscan_inst|sigkeyscan:uut_sigkeyscan|cnt[6] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VGA_Ball|Ball_speed:Ball_speed_inst|oSpeed_Y[1]                      ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VGA_Ball|Ball_speed:Ball_speed_inst|oSpeed_X[3]                      ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |VGA_Ball|Ball:Ball_inst|flag[0]                                      ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |VGA_Ball|Ball:Ball_inst|flag[3]                                      ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |VGA_Ball|block:block_inst|block_X[1]                                 ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |VGA_Ball|Ball:Ball_inst|Y[3]                                         ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |VGA_Ball|Ball:Ball_inst|X[2]                                         ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |VGA_Ball|block:block_inst|block_X[6]                                 ;
+; 30:1               ; 2 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |VGA_Ball|color_gen_char1:color_gen_char1_inst|Selector1              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------+
+
+
++---------------------------------------------------------+
+; Source assignments for color_gen:color_gen_inst         ;
++------------------------------+-------+------+-----------+
+; Assignment                   ; Value ; From ; To        ;
++------------------------------+-------+------+-----------+
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Ball_Show ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Ball_Show ;
++------------------------------+-------+------+-----------+
+
+
++--------------------------------------------------------------+
+; Source assignments for Ball:Ball_inst                        ;
++------------------------------+-------+------+----------------+
+; Assignment                   ; Value ; From ; To             ;
++------------------------------+-------+------+----------------+
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Ball_S[7]~buf0 ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Ball_S[7]~buf0 ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Ball_S[6]~buf0 ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Ball_S[6]~buf0 ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Ball_S[5]~buf0 ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Ball_S[5]~buf0 ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Ball_S[4]~buf0 ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Ball_S[4]~buf0 ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Ball_S[3]~buf0 ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Ball_S[3]~buf0 ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Ball_S[2]~buf0 ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Ball_S[2]~buf0 ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Ball_S[1]~buf0 ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Ball_S[1]~buf0 ;
+; IGNORE_LCELL_BUFFERS         ; off   ; -    ; Ball_S[0]~buf0 ;
+; REMOVE_REDUNDANT_LOGIC_CELLS ; off   ; -    ; Ball_S[0]~buf0 ;
++------------------------------+-------+------+----------------+
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: arykeyscan:arykeyscan_inst ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; K_IDLE         ; 0000  ; Unsigned Binary                                ;
+; K_H1OL         ; 0001  ; Unsigned Binary                                ;
+; K_H2OL         ; 0010  ; Unsigned Binary                                ;
+; K_H3OL         ; 0011  ; Unsigned Binary                                ;
+; K_H4OL         ; 0100  ; Unsigned Binary                                ;
+; K_CHCK         ; 0101  ; Unsigned Binary                                ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: color_gen:color_gen_inst ;
++----------------------+-------+----------------------------------------+
+; Parameter Name       ; Value ; Type                                   ;
++----------------------+-------+----------------------------------------+
+; H_LINE               ; 800   ; Signed Integer                         ;
+; V_LINE               ; 525   ; Signed Integer                         ;
+; Hsync_Blank          ; 140   ; Signed Integer                         ;
+; Hsync_Front_Porch    ; 16    ; Signed Integer                         ;
+; Vertical_Back_Porch  ; 33    ; Signed Integer                         ;
+; Vertical_Front_Porch ; 10    ; Signed Integer                         ;
+; H_TOTAL              ; 799   ; Signed Integer                         ;
+; H_SYNC               ; 96    ; Signed Integer                         ;
+; H_START              ; 140   ; Signed Integer                         ;
+; H_END                ; 780   ; Signed Integer                         ;
+; V_TOTAL              ; 524   ; Signed Integer                         ;
+; V_SYNC               ; 2     ; Signed Integer                         ;
+; V_START              ; 34    ; Signed Integer                         ;
+; V_END                ; 514   ; Signed Integer                         ;
+; X_START              ; 140   ; Signed Integer                         ;
+; Y_START              ; 33    ; Signed Integer                         ;
+; Ball_X_Center        ; 461   ; Signed Integer                         ;
+; Ball_Y_Center        ; 273   ; Signed Integer                         ;
+; Ball_X_Min           ; 139   ; Signed Integer                         ;
+; Ball_Y_Min           ; 32    ; Signed Integer                         ;
+; Ball_X_Max           ; 783   ; Signed Integer                         ;
+; Ball_Y_Max           ; 514   ; Signed Integer                         ;
++----------------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: state_run:state_run_inst ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; S0             ; 0001  ; Unsigned Binary                              ;
+; S1             ; 0010  ; Unsigned Binary                              ;
+; S2             ; 0100  ; Unsigned Binary                              ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Ball:Ball_inst ;
++----------------------+-------+------------------------------+
+; Parameter Name       ; Value ; Type                         ;
++----------------------+-------+------------------------------+
+; H_LINE               ; 800   ; Signed Integer               ;
+; V_LINE               ; 525   ; Signed Integer               ;
+; Hsync_Blank          ; 140   ; Signed Integer               ;
+; Hsync_Front_Porch    ; 16    ; Signed Integer               ;
+; Vertical_Back_Porch  ; 33    ; Signed Integer               ;
+; Vertical_Front_Porch ; 10    ; Signed Integer               ;
+; H_TOTAL              ; 799   ; Signed Integer               ;
+; H_SYNC               ; 96    ; Signed Integer               ;
+; H_START              ; 140   ; Signed Integer               ;
+; H_END                ; 780   ; Signed Integer               ;
+; V_TOTAL              ; 524   ; Signed Integer               ;
+; V_SYNC               ; 2     ; Signed Integer               ;
+; V_START              ; 34    ; Signed Integer               ;
+; V_END                ; 514   ; Signed Integer               ;
+; X_START              ; 140   ; Signed Integer               ;
+; Y_START              ; 33    ; Signed Integer               ;
+; Ball_X_Center        ; 461   ; Signed Integer               ;
+; Ball_Y_Center        ; 273   ; Signed Integer               ;
+; Ball_X_Min           ; 139   ; Signed Integer               ;
+; Ball_Y_Min           ; 32    ; Signed Integer               ;
+; Ball_X_Max           ; 783   ; Signed Integer               ;
+; Ball_Y_Max           ; 514   ; Signed Integer               ;
++----------------------+-------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: block:block_inst ;
++----------------------+-------+--------------------------------+
+; Parameter Name       ; Value ; Type                           ;
++----------------------+-------+--------------------------------+
+; H_LINE               ; 800   ; Signed Integer                 ;
+; V_LINE               ; 525   ; Signed Integer                 ;
+; Hsync_Blank          ; 140   ; Signed Integer                 ;
+; Hsync_Front_Porch    ; 16    ; Signed Integer                 ;
+; Vertical_Back_Porch  ; 33    ; Signed Integer                 ;
+; Vertical_Front_Porch ; 10    ; Signed Integer                 ;
+; H_TOTAL              ; 799   ; Signed Integer                 ;
+; H_SYNC               ; 96    ; Signed Integer                 ;
+; H_START              ; 140   ; Signed Integer                 ;
+; H_END                ; 780   ; Signed Integer                 ;
+; V_TOTAL              ; 524   ; Signed Integer                 ;
+; V_SYNC               ; 2     ; Signed Integer                 ;
+; V_START              ; 34    ; Signed Integer                 ;
+; V_END                ; 514   ; Signed Integer                 ;
+; X_START              ; 140   ; Signed Integer                 ;
+; Y_START              ; 33    ; Signed Integer                 ;
+; Ball_X_Center        ; 461   ; Signed Integer                 ;
+; Ball_Y_Center        ; 273   ; Signed Integer                 ;
+; Ball_X_Min           ; 139   ; Signed Integer                 ;
+; Ball_Y_Min           ; 32    ; Signed Integer                 ;
+; Ball_X_Max           ; 783   ; Signed Integer                 ;
+; Ball_Y_Max           ; 514   ; Signed Integer                 ;
++----------------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: color_gen_char1:color_gen_char1_inst                                                                                   ;
++----------------+----------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Parameter Name ; Value                                                                                                                            ; Type            ;
++----------------+----------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; CHAR_START_X   ; 400                                                                                                                              ; Signed Integer  ;
+; CHAR_START_Y   ; 231                                                                                                                              ; Signed Integer  ;
+; CHAR_X         ; 128                                                                                                                              ; Signed Integer  ;
+; CHAR_Y         ; 32                                                                                                                               ; Signed Integer  ;
+; charline_a0    ; 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; charline_a1    ; 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; charline_a2    ; 00000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000001000000000000100000000000 ; Unsigned Binary ;
+; charline_a3    ; 00001000000100000000011100000000000000000000000001110000000000000000000000000000000000000010000000000001110000000000111000000000 ; Unsigned Binary ;
+; charline_a4    ; 00000110000011000000011000000000000000000000000001100100000000000000000000000000000000000111000000000001100000000001110000000000 ; Unsigned Binary ;
+; charline_a5    ; 00000111000011100000010000000000000000000000000001100011100000000001111111111111111111111111100000000001100000000001100000000000 ; Unsigned Binary ;
+; charline_a6    ; 00000011000001100000110000000000000000000000000001100001110000000000000000110000000011000000000000000001100000000001000000000000 ; Unsigned Binary ;
+; charline_a7    ; 00000011000001000000100000011000000000000001100001100000111000000000000000110000000011000000000000000011000000000011000000000000 ; Unsigned Binary ;
+; charline_a8    ; 00000000000000001000111111111100001111111111110001100000011000000000000000110000000011000000000000000011000000000010000011000000 ; Unsigned Binary ;
+; charline_a9    ; 00000000011111111101000000000000000000000001100001100000000000000000000000110000000011000000000000000011000010000110000001100000 ; Unsigned Binary ;
+; charline_a10   ; 00100000100010000001000000010000000000000011000001100000000110000000000000110000000011000000000000111111111111000100000000111000 ; Unsigned Binary ;
+; charline_a11   ; 00110000100010000011111111111000000000000011000000100001111111000000000000110000000011000000000000000010000010001000000000011100 ; Unsigned Binary ;
+; charline_a12   ; 00011001000010000100000000110000000000000011101111111110000000000000000000110000000011000000000000000110000110011000000111111100 ; Unsigned Binary ;
+; charline_a13   ; 00011001000110001000000001100000000100000011010000110000000000000000000000110000000011000000000000000110000110011111111000001100 ; Unsigned Binary ;
+; charline_a14   ; 00001001000111111100000001000000000011000010000000110000001000000000000000110000000011000001100000000100000110011000000000001000 ; Unsigned Binary ;
+; charline_a15   ; 00000001000110001100000110000000000001100110000000110000011100000011111111111111111111111111110000000100000110000000000000000000 ; Unsigned Binary ;
+; charline_a16   ; 00000010000110001100000110000000000000110110000000110000011000000000000000110000000011000000000000001100000100000000000000000000 ; Unsigned Binary ;
+; charline_a17   ; 00000010000110001000000110000000000000011100000000010000110000000000000000110000000011000000000000001100001100001000000000010000 ; Unsigned Binary ;
+; charline_a18   ; 00000010000110001000000110001000000000001100000000011001110000000000000000110000000011000000000000001000001100001111111111111000 ; Unsigned Binary ;
+; charline_a19   ; 00000110000100001011111111111100000000001110000000011001100000000000000000110000000011000000000000011000001000001100000000110000 ; Unsigned Binary ;
+; charline_a20   ; 00000100000100001000000110000000000000011111000000011011000000000000000000110000000011000000000000011000011000001100000000110000 ; Unsigned Binary ;
+; charline_a21   ; 00111100001100001000000110000000000000010011000000001110000000000000000000100000000011000000000000001100011000001100000000110000 ; Unsigned Binary ;
+; charline_a22   ; 00001100001100001000000110000000000000110011100000001100000001000000000001100000000011000000000000000011010000001100000000110000 ; Unsigned Binary ;
+; charline_a23   ; 00001100001000011000000110000000000000100001100000011110000001000000000001100000000011000000000000000000111000001100000000110000 ; Unsigned Binary ;
+; charline_a24   ; 00001100011000011000000110000000000001000000100000110111000001000000000011000000000011000000000000000000101110001100000000110000 ; Unsigned Binary ;
+; charline_a25   ; 00001100010000011000000110000000000011000000100001100011000010000000000010000000000011000000000000000001100111001100000000110000 ; Unsigned Binary ;
+; charline_a26   ; 00011100110000011000000110000000000010000000000110000001100010000000000100000000000011000000000000000011000011001100000000110000 ; Unsigned Binary ;
+; charline_a27   ; 00011100100100110000000110000000000100000000001100000000111011000000001000000000000011000000000000000110000000001111111111110000 ; Unsigned Binary ;
+; charline_a28   ; 00001101000011110000111110000000001000000000010000000000011111000000010000000000000011000000000000001100000000001100000000110000 ; Unsigned Binary ;
+; charline_a29   ; 00000010000001100000001100000000010000000001100000000000001111000001100000000000000011000000000000010000000000001100000000110000 ; Unsigned Binary ;
+; charline_a30   ; 00000100000000000000000000000000000000000000000000000000000011000010000000000000000010000000000000100000000000001000000000000000 ; Unsigned Binary ;
+; charline_a31   ; 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; charline_b0    ; 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; charline_b1    ; 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; charline_b2    ; 00000000000000000000000000000000000000000000000001000000000000000000000000000000000010000000000000000000000000010000000000000000 ; Unsigned Binary ;
+; charline_b3    ; 00001000000100000000011100000000000000000000000001110000000000000000000110000000000011100000000000000000000000011100000000000000 ; Unsigned Binary ;
+; charline_b4    ; 00000110000011000000011000000000000000000000000001100100000000000000000110000000000011000000000000000000000000011000000000000000 ; Unsigned Binary ;
+; charline_b5    ; 00000111000011100000010000000000000000000000000001100011100000000000000110000000000011000000000000000000000000011000000000011000 ; Unsigned Binary ;
+; charline_b6    ; 00000011000001100000110000000000000000000000000001100001110000000000001100000000000011000000000000111111111111111111111111111100 ; Unsigned Binary ;
+; charline_b7    ; 00000011000001000000100000011000000000000001100001100000111000000000001100000000000011000001100000000000000000011000000000000000 ; Unsigned Binary ;
+; charline_b8    ; 00000000000000001000111111111100001111111111110001100000011000000000001000000111111111111111110000000000000000011000000000000000 ; Unsigned Binary ;
+; charline_b9    ; 00000000011111111101000000000000000000000001100001100000000000000000010000010000000011000000000000000000000000011000000000000000 ; Unsigned Binary ;
+; charline_b10   ; 00100000100010000001000000010000000000000011000001100000000110000000010000011100000011000000000000000010000000011000000010000000 ; Unsigned Binary ;
+; charline_b11   ; 00110000100010000011111111111000000000000011000000100001111111000000100000110000000011000000000000000011111111111111111111100000 ; Unsigned Binary ;
+; charline_b12   ; 00011001000010000100000000110000000000000011101111111110000000000001100001100000000011000000000000000011000000011000000011000000 ; Unsigned Binary ;
+; charline_b13   ; 00011001000110001000000001100000000100000011010000110000000000000011111111100000000011000000000000000011000000011000000011000000 ; Unsigned Binary ;
+; charline_b14   ; 00001001000111111100000001000000000011000010000000110000001000000001110011000000000011000010000000000011000000011000000011000000 ; Unsigned Binary ;
+; charline_b15   ; 00000001000110001100000110000000000001100110000000110000011100000000000110000011111111111111000000000011000000011000000011000000 ; Unsigned Binary ;
+; charline_b16   ; 00000010000110001100000110000000000000110110000000110000011000000000000100000000000000000000000000000011000000011000000011000000 ; Unsigned Binary ;
+; charline_b17   ; 00000010000110001000000110000000000000011100000000010000110000000000001000000000000000000000000000000011111111111111111111000000 ; Unsigned Binary ;
+; charline_b18   ; 00000010000110001000000110001000000000001100000000011001110000000000010000000001000000000010000000000011000001111100000011000000 ; Unsigned Binary ;
+; charline_b19   ; 00000110000100001011111111111100000000001110000000011001100000000000100001111001111111111111000000000011000011111010000000000000 ; Unsigned Binary ;
+; charline_b20   ; 00000100000100001000000110000000000000011111000000011011000000000001111110000001100000000011000000000000000011011011000000000000 ; Unsigned Binary ;
+; charline_b21   ; 00111100001100001000000110000000000000010011000000001110000000000001110000000001100000000010000000000000000110011001000000000000 ; Unsigned Binary ;
+; charline_b22   ; 00001100001100001000000110000000000000110011100000001100000001000000000000000001100000000010000000000000001100011000100000000000 ; Unsigned Binary ;
+; charline_b23   ; 00001100001000011000000110000000000000100001100000011110000001000000000000000001100000000010000000000000011000011000111000000000 ; Unsigned Binary ;
+; charline_b24   ; 00001100011000011000000110000000000001000000100000110111000001000000000000011001100000000010000000000000110000011000011100000000 ; Unsigned Binary ;
+; charline_b25   ; 00001100010000011000000110000000000011000000100001100011000010000000000011100001100000000010000000000001100000011000001111000000 ; Unsigned Binary ;
+; charline_b26   ; 00011100110000011000000110000000000010000000000110000001100010000000111110000001100000000010000000000011000000011000000111110000 ; Unsigned Binary ;
+; charline_b27   ; 00011100100100110000000110000000000100000000001100000000111011000011110000000001111111111110000000000110000000011000000001111100 ; Unsigned Binary ;
+; charline_b28   ; 00001101000011110000111110000000001000000000010000000000011111000001000000000001100000000010000000011000000000011000000000110000 ; Unsigned Binary ;
+; charline_b29   ; 00000010000001100000001100000000010000000001100000000000001111000000000000000001100000000010000000100000000000011000000000000000 ; Unsigned Binary ;
+; charline_b30   ; 00000100000000000000000000000000000000000000000000000000000011000000000000000001000000000000000000000000000000010000000000000000 ; Unsigned Binary ;
+; charline_b31   ; 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
++----------------+----------------------------------------------------------------------------------------------------------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: color_gen_char2:color_gen_char2_inst                                                                                   ;
++----------------+----------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; Parameter Name ; Value                                                                                                                            ; Type            ;
++----------------+----------------------------------------------------------------------------------------------------------------------------------+-----------------+
+; CHAR_START_X   ; 400                                                                                                                              ; Signed Integer  ;
+; CHAR_START_Y   ; 231                                                                                                                              ; Signed Integer  ;
+; CHAR_X         ; 128                                                                                                                              ; Signed Integer  ;
+; CHAR_Y         ; 32                                                                                                                               ; Signed Integer  ;
+; charline_a0    ; 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; charline_a1    ; 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; charline_a2    ; 00000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000001000000000000100000000000 ; Unsigned Binary ;
+; charline_a3    ; 00001000000100000000011100000000000000000000000001110000000000000000000000000000000000000010000000000001110000000000111000000000 ; Unsigned Binary ;
+; charline_a4    ; 00000110000011000000011000000000000000000000000001100100000000000000000000000000000000000111000000000001100000000001110000000000 ; Unsigned Binary ;
+; charline_a5    ; 00000111000011100000010000000000000000000000000001100011100000000001111111111111111111111111100000000001100000000001100000000000 ; Unsigned Binary ;
+; charline_a6    ; 00000011000001100000110000000000000000000000000001100001110000000000000000110000000011000000000000000001100000000001000000000000 ; Unsigned Binary ;
+; charline_a7    ; 00000011000001000000100000011000000000000001100001100000111000000000000000110000000011000000000000000011000000000011000000000000 ; Unsigned Binary ;
+; charline_a8    ; 00000000000000001000111111111100001111111111110001100000011000000000000000110000000011000000000000000011000000000010000011000000 ; Unsigned Binary ;
+; charline_a9    ; 00000000011111111101000000000000000000000001100001100000000000000000000000110000000011000000000000000011000010000110000001100000 ; Unsigned Binary ;
+; charline_a10   ; 00100000100010000001000000010000000000000011000001100000000110000000000000110000000011000000000000111111111111000100000000111000 ; Unsigned Binary ;
+; charline_a11   ; 00110000100010000011111111111000000000000011000000100001111111000000000000110000000011000000000000000010000010001000000000011100 ; Unsigned Binary ;
+; charline_a12   ; 00011001000010000100000000110000000000000011101111111110000000000000000000110000000011000000000000000110000110011000000111111100 ; Unsigned Binary ;
+; charline_a13   ; 00011001000110001000000001100000000100000011010000110000000000000000000000110000000011000000000000000110000110011111111000001100 ; Unsigned Binary ;
+; charline_a14   ; 00001001000111111100000001000000000011000010000000110000001000000000000000110000000011000001100000000100000110011000000000001000 ; Unsigned Binary ;
+; charline_a15   ; 00000001000110001100000110000000000001100110000000110000011100000011111111111111111111111111110000000100000110000000000000000000 ; Unsigned Binary ;
+; charline_a16   ; 00000010000110001100000110000000000000110110000000110000011000000000000000110000000011000000000000001100000100000000000000000000 ; Unsigned Binary ;
+; charline_a17   ; 00000010000110001000000110000000000000011100000000010000110000000000000000110000000011000000000000001100001100001000000000010000 ; Unsigned Binary ;
+; charline_a18   ; 00000010000110001000000110001000000000001100000000011001110000000000000000110000000011000000000000001000001100001111111111111000 ; Unsigned Binary ;
+; charline_a19   ; 00000110000100001011111111111100000000001110000000011001100000000000000000110000000011000000000000011000001000001100000000110000 ; Unsigned Binary ;
+; charline_a20   ; 00000100000100001000000110000000000000011111000000011011000000000000000000110000000011000000000000011000011000001100000000110000 ; Unsigned Binary ;
+; charline_a21   ; 00111100001100001000000110000000000000010011000000001110000000000000000000100000000011000000000000001100011000001100000000110000 ; Unsigned Binary ;
+; charline_a22   ; 00001100001100001000000110000000000000110011100000001100000001000000000001100000000011000000000000000011010000001100000000110000 ; Unsigned Binary ;
+; charline_a23   ; 00001100001000011000000110000000000000100001100000011110000001000000000001100000000011000000000000000000111000001100000000110000 ; Unsigned Binary ;
+; charline_a24   ; 00001100011000011000000110000000000001000000100000110111000001000000000011000000000011000000000000000000101110001100000000110000 ; Unsigned Binary ;
+; charline_a25   ; 00001100010000011000000110000000000011000000100001100011000010000000000010000000000011000000000000000001100111001100000000110000 ; Unsigned Binary ;
+; charline_a26   ; 00011100110000011000000110000000000010000000000110000001100010000000000100000000000011000000000000000011000011001100000000110000 ; Unsigned Binary ;
+; charline_a27   ; 00011100100100110000000110000000000100000000001100000000111011000000001000000000000011000000000000000110000000001111111111110000 ; Unsigned Binary ;
+; charline_a28   ; 00001101000011110000111110000000001000000000010000000000011111000000010000000000000011000000000000001100000000001100000000110000 ; Unsigned Binary ;
+; charline_a29   ; 00000010000001100000001100000000010000000001100000000000001111000001100000000000000011000000000000010000000000001100000000110000 ; Unsigned Binary ;
+; charline_a30   ; 00000100000000000000000000000000000000000000000000000000000011000010000000000000000010000000000000100000000000001000000000000000 ; Unsigned Binary ;
+; charline_a31   ; 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; charline_b0    ; 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; charline_b1    ; 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
+; charline_b2    ; 00000000000000000000000000000000000000000000000001000000000000000000000000000000000010000000000000000000000000010000000000000000 ; Unsigned Binary ;
+; charline_b3    ; 00001000000100000000011100000000000000000000000001110000000000000000000110000000000011100000000000000000000000011100000000000000 ; Unsigned Binary ;
+; charline_b4    ; 00000110000011000000011000000000000000000000000001100100000000000000000110000000000011000000000000000000000000011000000000000000 ; Unsigned Binary ;
+; charline_b5    ; 00000111000011100000010000000000000000000000000001100011100000000000000110000000000011000000000000000000000000011000000000011000 ; Unsigned Binary ;
+; charline_b6    ; 00000011000001100000110000000000000000000000000001100001110000000000001100000000000011000000000000111111111111111111111111111100 ; Unsigned Binary ;
+; charline_b7    ; 00000011000001000000100000011000000000000001100001100000111000000000001100000000000011000001100000000000000000011000000000000000 ; Unsigned Binary ;
+; charline_b8    ; 00000000000000001000111111111100001111111111110001100000011000000000001000000111111111111111110000000000000000011000000000000000 ; Unsigned Binary ;
+; charline_b9    ; 00000000011111111101000000000000000000000001100001100000000000000000010000010000000011000000000000000000000000011000000000000000 ; Unsigned Binary ;
+; charline_b10   ; 00100000100010000001000000010000000000000011000001100000000110000000010000011100000011000000000000000010000000011000000010000000 ; Unsigned Binary ;
+; charline_b11   ; 00110000100010000011111111111000000000000011000000100001111111000000100000110000000011000000000000000011111111111111111111100000 ; Unsigned Binary ;
+; charline_b12   ; 00011001000010000100000000110000000000000011101111111110000000000001100001100000000011000000000000000011000000011000000011000000 ; Unsigned Binary ;
+; charline_b13   ; 00011001000110001000000001100000000100000011010000110000000000000011111111100000000011000000000000000011000000011000000011000000 ; Unsigned Binary ;
+; charline_b14   ; 00001001000111111100000001000000000011000010000000110000001000000001110011000000000011000010000000000011000000011000000011000000 ; Unsigned Binary ;
+; charline_b15   ; 00000001000110001100000110000000000001100110000000110000011100000000000110000011111111111111000000000011000000011000000011000000 ; Unsigned Binary ;
+; charline_b16   ; 00000010000110001100000110000000000000110110000000110000011000000000000100000000000000000000000000000011000000011000000011000000 ; Unsigned Binary ;
+; charline_b17   ; 00000010000110001000000110000000000000011100000000010000110000000000001000000000000000000000000000000011111111111111111111000000 ; Unsigned Binary ;
+; charline_b18   ; 00000010000110001000000110001000000000001100000000011001110000000000010000000001000000000010000000000011000001111100000011000000 ; Unsigned Binary ;
+; charline_b19   ; 00000110000100001011111111111100000000001110000000011001100000000000100001111001111111111111000000000011000011111010000000000000 ; Unsigned Binary ;
+; charline_b20   ; 00000100000100001000000110000000000000011111000000011011000000000001111110000001100000000011000000000000000011011011000000000000 ; Unsigned Binary ;
+; charline_b21   ; 00111100001100001000000110000000000000010011000000001110000000000001110000000001100000000010000000000000000110011001000000000000 ; Unsigned Binary ;
+; charline_b22   ; 00001100001100001000000110000000000000110011100000001100000001000000000000000001100000000010000000000000001100011000100000000000 ; Unsigned Binary ;
+; charline_b23   ; 00001100001000011000000110000000000000100001100000011110000001000000000000000001100000000010000000000000011000011000111000000000 ; Unsigned Binary ;
+; charline_b24   ; 00001100011000011000000110000000000001000000100000110111000001000000000000011001100000000010000000000000110000011000011100000000 ; Unsigned Binary ;
+; charline_b25   ; 00001100010000011000000110000000000011000000100001100011000010000000000011100001100000000010000000000001100000011000001111000000 ; Unsigned Binary ;
+; charline_b26   ; 00011100110000011000000110000000000010000000000110000001100010000000111110000001100000000010000000000011000000011000000111110000 ; Unsigned Binary ;
+; charline_b27   ; 00011100100100110000000110000000000100000000001100000000111011000011110000000001111111111110000000000110000000011000000001111100 ; Unsigned Binary ;
+; charline_b28   ; 00001101000011110000111110000000001000000000010000000000011111000001000000000001100000000010000000011000000000011000000000110000 ; Unsigned Binary ;
+; charline_b29   ; 00000010000001100000001100000000010000000001100000000000001111000000000000000001100000000010000000100000000000011000000000000000 ; Unsigned Binary ;
+; charline_b30   ; 00000100000000000000000000000000000000000000000000000000000011000000000000000001000000000000000000000000000000010000000000000000 ; Unsigned Binary ;
+; charline_b31   ; 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Unsigned Binary ;
++----------------+----------------------------------------------------------------------------------------------------------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: vga_controller:vga_controller_inst ;
++----------------+--------------+-------------------------------------------------+
+; Parameter Name ; Value        ; Type                                            ;
++----------------+--------------+-------------------------------------------------+
+; VGA_HTT        ; 001100011111 ; Unsigned Binary                                 ;
+; VGA_HST        ; 000001100000 ; Unsigned Binary                                 ;
+; VGA_HBP        ; 000000110000 ; Unsigned Binary                                 ;
+; VGA_HVT        ; 001010000000 ; Unsigned Binary                                 ;
+; VGA_HFP        ; 000000010000 ; Unsigned Binary                                 ;
+; VGA_VTT        ; 001000001100 ; Unsigned Binary                                 ;
+; VGA_VST        ; 000000000010 ; Unsigned Binary                                 ;
+; VGA_VBP        ; 000000100001 ; Unsigned Binary                                 ;
+; VGA_VVT        ; 000111100000 ; Unsigned Binary                                 ;
+; VGA_VFP        ; 000000001010 ; Unsigned Binary                                 ;
++----------------+--------------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: color_gen:color_gen_inst|lpm_mult:Mult2 ;
++------------------------------------------------+--------------+--------------------------+
+; Parameter Name                                 ; Value        ; Type                     ;
++------------------------------------------------+--------------+--------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE           ;
+; LPM_WIDTHA                                     ; 8            ; Untyped                  ;
+; LPM_WIDTHB                                     ; 8            ; Untyped                  ;
+; LPM_WIDTHP                                     ; 16           ; Untyped                  ;
+; LPM_WIDTHR                                     ; 16           ; Untyped                  ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                  ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                  ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                  ;
+; LATENCY                                        ; 0            ; Untyped                  ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; USE_EAB                                        ; OFF          ; Untyped                  ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped                  ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                  ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                  ;
+; CBXI_PARAMETER                                 ; mult_aat     ; Untyped                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                  ;
++------------------------------------------------+--------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: color_gen:color_gen_inst|lpm_mult:Mult0 ;
++------------------------------------------------+--------------+--------------------------+
+; Parameter Name                                 ; Value        ; Type                     ;
++------------------------------------------------+--------------+--------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE           ;
+; LPM_WIDTHA                                     ; 12           ; Untyped                  ;
+; LPM_WIDTHB                                     ; 12           ; Untyped                  ;
+; LPM_WIDTHP                                     ; 24           ; Untyped                  ;
+; LPM_WIDTHR                                     ; 24           ; Untyped                  ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                  ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                  ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                  ;
+; LATENCY                                        ; 0            ; Untyped                  ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; USE_EAB                                        ; OFF          ; Untyped                  ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped                  ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                  ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                  ;
+; CBXI_PARAMETER                                 ; mult_t5t     ; Untyped                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                  ;
++------------------------------------------------+--------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: color_gen:color_gen_inst|lpm_mult:Mult1 ;
++------------------------------------------------+--------------+--------------------------+
+; Parameter Name                                 ; Value        ; Type                     ;
++------------------------------------------------+--------------+--------------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY               ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY             ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE             ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE           ;
+; LPM_WIDTHA                                     ; 11           ; Untyped                  ;
+; LPM_WIDTHB                                     ; 11           ; Untyped                  ;
+; LPM_WIDTHP                                     ; 22           ; Untyped                  ;
+; LPM_WIDTHR                                     ; 22           ; Untyped                  ;
+; LPM_WIDTHS                                     ; 1            ; Untyped                  ;
+; LPM_REPRESENTATION                             ; SIGNED       ; Untyped                  ;
+; LPM_PIPELINE                                   ; 0            ; Untyped                  ;
+; LATENCY                                        ; 0            ; Untyped                  ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; INPUT_B_IS_CONSTANT                            ; NO           ; Untyped                  ;
+; USE_EAB                                        ; OFF          ; Untyped                  ;
+; MAXIMIZE_SPEED                                 ; 6            ; Untyped                  ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped                  ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped                  ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K      ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped                  ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped                  ;
+; CBXI_PARAMETER                                 ; mult_p5t     ; Untyped                  ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped                  ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped                  ;
++------------------------------------------------+--------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                  ;
++---------------------------------------+-----------------------------------------+
+; Name                                  ; Value                                   ;
++---------------------------------------+-----------------------------------------+
+; Number of entity instances            ; 3                                       ;
+; Entity Instance                       ; color_gen:color_gen_inst|lpm_mult:Mult2 ;
+;     -- LPM_WIDTHA                     ; 8                                       ;
+;     -- LPM_WIDTHB                     ; 8                                       ;
+;     -- LPM_WIDTHP                     ; 16                                      ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                                ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                      ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                      ;
+;     -- USE_EAB                        ; OFF                                     ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                    ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                      ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                      ;
+; Entity Instance                       ; color_gen:color_gen_inst|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 12                                      ;
+;     -- LPM_WIDTHB                     ; 12                                      ;
+;     -- LPM_WIDTHP                     ; 24                                      ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                  ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                      ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                      ;
+;     -- USE_EAB                        ; OFF                                     ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                    ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                      ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                      ;
+; Entity Instance                       ; color_gen:color_gen_inst|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 11                                      ;
+;     -- LPM_WIDTHB                     ; 11                                      ;
+;     -- LPM_WIDTHP                     ; 22                                      ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                  ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                      ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                      ;
+;     -- USE_EAB                        ; OFF                                     ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                    ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                      ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                      ;
++---------------------------------------+-----------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "color_gen:color_gen_inst"                                                                                                                                                                  ;
++---------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                                                                                                                                                            ;
++---------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; iDISPLAY_MODE ; Input ; Warning  ; Input port expression (16 bits) is wider than the input port (2 bits) it drives.  The 14 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++---------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Background_Color:Background_Color_inst"                                                                                                                                            ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                                                                                                                 ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; oBackground_set ; Output ; Warning  ; Output or bidir port (2 bits) is smaller than the port expression (16 bits) it drives.  The 14 most-significant bit(s) in the port expression will be connected to GND. ;
++-----------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:20     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Full Version
+    Info: Processing started: Sun Sep 06 17:25:47 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA_Ball -c VGA_Ball
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file source_code/vga_controller.v
+    Info (12023): Found entity 1: vga_controller
+Info (12021): Found 1 design units, including 1 entities, in source file source_code/vga_ball.v
+    Info (12023): Found entity 1: VGA_Ball
+Info (12021): Found 1 design units, including 1 entities, in source file source_code/state_run.v
+    Info (12023): Found entity 1: state_run
+Info (12021): Found 1 design units, including 1 entities, in source file source_code/sigkeyscan.v
+    Info (12023): Found entity 1: sigkeyscan
+Info (12021): Found 1 design units, including 1 entities, in source file source_code/game_start.v
+    Info (12023): Found entity 1: game_start
+Info (12021): Found 1 design units, including 1 entities, in source file source_code/color_gen_char2.v
+    Info (12023): Found entity 1: color_gen_char2
+Info (12021): Found 1 design units, including 1 entities, in source file source_code/color_gen_char1.v
+    Info (12023): Found entity 1: color_gen_char1
+Info (12021): Found 1 design units, including 1 entities, in source file source_code/color_gen.v
+    Info (12023): Found entity 1: color_gen
+Info (12021): Found 1 design units, including 1 entities, in source file source_code/block_move.v
+    Info (12023): Found entity 1: block_move
+Info (12021): Found 1 design units, including 1 entities, in source file source_code/block.v
+    Info (12023): Found entity 1: block
+Info (12021): Found 1 design units, including 1 entities, in source file source_code/ball_speed.v
+    Info (12023): Found entity 1: Ball_speed
+Info (12021): Found 1 design units, including 1 entities, in source file source_code/ball.v
+    Info (12023): Found entity 1: Ball
+Info (12021): Found 1 design units, including 1 entities, in source file source_code/background_color.v
+    Info (12023): Found entity 1: Background_Color
+Info (12021): Found 1 design units, including 1 entities, in source file source_code/arykeyscan.v
+    Info (12023): Found entity 1: arykeyscan
+Info (12127): Elaborating entity "VGA_Ball" for the top level hierarchy
+Info (12128): Elaborating entity "arykeyscan" for hierarchy "arykeyscan:arykeyscan_inst"
+Info (12128): Elaborating entity "sigkeyscan" for hierarchy "arykeyscan:arykeyscan_inst|sigkeyscan:uut_sigkeyscan"
+Info (12128): Elaborating entity "Background_Color" for hierarchy "Background_Color:Background_Color_inst"
+Warning (10230): Verilog HDL assignment warning at Background_Color.v(14): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at Background_Color.v(16): truncated value with size 32 to match size of target (2)
+Info (12128): Elaborating entity "color_gen" for hierarchy "color_gen:color_gen_inst"
+Warning (10235): Verilog HDL Always Construct warning at color_gen.v(36): variable "block_X1" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at color_gen.v(36): variable "block_X2" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12128): Elaborating entity "game_start" for hierarchy "game_start:game_start_inst"
+Info (12128): Elaborating entity "state_run" for hierarchy "state_run:state_run_inst"
+Warning (10230): Verilog HDL assignment warning at state_run.v(20): truncated value with size 4 to match size of target (2)
+Warning (10235): Verilog HDL Always Construct warning at state_run.v(30): variable "mred_char" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at state_run.v(31): variable "mgreen_char" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at state_run.v(32): variable "mblue_char" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at state_run.v(34): truncated value with size 4 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at state_run.v(35): truncated value with size 4 to match size of target (2)
+Warning (10235): Verilog HDL Always Construct warning at state_run.v(40): variable "mred_ball" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at state_run.v(41): variable "mgreen_ball" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at state_run.v(42): variable "mblue_ball" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10230): Verilog HDL assignment warning at state_run.v(44): truncated value with size 4 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at state_run.v(46): truncated value with size 4 to match size of target (2)
+Warning (10199): Verilog HDL Case Statement warning at state_run.v(49): case item expression never matches the case expression
+Warning (10230): Verilog HDL assignment warning at state_run.v(60): truncated value with size 4 to match size of target (2)
+Warning (10235): Verilog HDL Always Construct warning at state_run.v(61): variable "mred_over" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at state_run.v(62): variable "mgreen_over" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at state_run.v(63): variable "mblue_over" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (10264): Verilog HDL Case Statement information at state_run.v(27): all case item expressions in this case statement are onehot
+Info (12128): Elaborating entity "Ball" for hierarchy "Ball:Ball_inst"
+Warning (10230): Verilog HDL assignment warning at Ball.v(31): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at Ball.v(68): truncated value with size 32 to match size of target (10)
+Info (12128): Elaborating entity "Ball_speed" for hierarchy "Ball_speed:Ball_speed_inst"
+Warning (10230): Verilog HDL assignment warning at Ball_speed.v(21): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Ball_speed.v(27): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Ball_speed.v(30): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at Ball_speed.v(36): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "block" for hierarchy "block:block_inst"
+Warning (10230): Verilog HDL assignment warning at block.v(27): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at block.v(32): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at block.v(42): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at block.v(52): truncated value with size 32 to match size of target (11)
+Warning (10240): Verilog HDL Always Construct warning at block.v(44): inferring latch(es) for variable "block_center_add", which holds its previous value in one or more paths through the always construct
+Warning (10230): Verilog HDL assignment warning at block.v(65): truncated value with size 32 to match size of target (11)
+Warning (10240): Verilog HDL Always Construct warning at block.v(57): inferring latch(es) for variable "block_center_sub", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "block_center_sub[0]" at block.v(57)
+Info (10041): Inferred latch for "block_center_add[0]" at block.v(47)
+Info (12128): Elaborating entity "block_move" for hierarchy "block_move:block_move_inst"
+Info (12128): Elaborating entity "color_gen_char1" for hierarchy "color_gen_char1:color_gen_char1_inst"
+Warning (10270): Verilog HDL Case Statement warning at color_gen_char1.v(22): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at color_gen_char1.v(11): inferring latch(es) for variable "oVGA_R", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at color_gen_char1.v(11): inferring latch(es) for variable "oVGA_G", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at color_gen_char1.v(11): inferring latch(es) for variable "oVGA_B", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "oVGA_B" at color_gen_char1.v(22)
+Info (10041): Inferred latch for "oVGA_G" at color_gen_char1.v(22)
+Info (10041): Inferred latch for "oVGA_R" at color_gen_char1.v(22)
+Info (12128): Elaborating entity "color_gen_char2" for hierarchy "color_gen_char2:color_gen_char2_inst"
+Warning (10270): Verilog HDL Case Statement warning at color_gen_char2.v(22): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at color_gen_char2.v(11): inferring latch(es) for variable "oVGA_R", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at color_gen_char2.v(11): inferring latch(es) for variable "oVGA_G", which holds its previous value in one or more paths through the always construct
+Warning (10240): Verilog HDL Always Construct warning at color_gen_char2.v(11): inferring latch(es) for variable "oVGA_B", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "oVGA_B" at color_gen_char2.v(22)
+Info (10041): Inferred latch for "oVGA_G" at color_gen_char2.v(22)
+Info (10041): Inferred latch for "oVGA_R" at color_gen_char2.v(22)
+Info (12128): Elaborating entity "vga_controller" for hierarchy "vga_controller:vga_controller_inst"
+Warning (10230): Verilog HDL assignment warning at vga_controller.v(38): truncated value with size 12 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at vga_controller.v(40): truncated value with size 12 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at vga_controller.v(46): truncated value with size 12 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at vga_controller.v(49): truncated value with size 12 to match size of target (10)
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[15]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[14]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[13]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[12]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[11]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[10]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[9]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[8]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[7]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[6]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[5]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[4]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[3]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[2]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[15]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[14]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[13]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[12]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[11]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[10]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[9]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[8]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[7]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[6]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[5]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[4]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[3]" is missing source, defaulting to GND
+    Warning (12110): Net "iDISPLAY_MODE[2]" is missing source, defaulting to GND
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "color_gen:color_gen_inst|Mult2"
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "color_gen:color_gen_inst|Mult0"
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "color_gen:color_gen_inst|Mult1"
+Info (12130): Elaborated megafunction instantiation "color_gen:color_gen_inst|lpm_mult:Mult2"
+Info (12133): Instantiated megafunction "color_gen:color_gen_inst|lpm_mult:Mult2" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "8"
+    Info (12134): Parameter "LPM_WIDTHB" = "8"
+    Info (12134): Parameter "LPM_WIDTHP" = "16"
+    Info (12134): Parameter "LPM_WIDTHR" = "16"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_aat.tdf
+    Info (12023): Found entity 1: mult_aat
+Info (12130): Elaborated megafunction instantiation "color_gen:color_gen_inst|lpm_mult:Mult0"
+Info (12133): Instantiated megafunction "color_gen:color_gen_inst|lpm_mult:Mult0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "12"
+    Info (12134): Parameter "LPM_WIDTHB" = "12"
+    Info (12134): Parameter "LPM_WIDTHP" = "24"
+    Info (12134): Parameter "LPM_WIDTHR" = "24"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_t5t.tdf
+    Info (12023): Found entity 1: mult_t5t
+Info (12130): Elaborated megafunction instantiation "color_gen:color_gen_inst|lpm_mult:Mult1"
+Info (12133): Instantiated megafunction "color_gen:color_gen_inst|lpm_mult:Mult1" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHA" = "11"
+    Info (12134): Parameter "LPM_WIDTHB" = "11"
+    Info (12134): Parameter "LPM_WIDTHP" = "22"
+    Info (12134): Parameter "LPM_WIDTHR" = "22"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_p5t.tdf
+    Info (12023): Found entity 1: mult_p5t
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch color_gen_char1:color_gen_char1_inst|oVGA_R has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vga_controller:vga_controller_inst|oV_cnt[0]
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal vga_controller:vga_controller_inst|oV_cnt[0]
+Warning (13012): Latch color_gen_char2:color_gen_char2_inst|oVGA_R has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal vga_controller:vga_controller_inst|oV_cnt[0]
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal vga_controller:vga_controller_inst|oV_cnt[0]
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "block:block_inst|Add2~20"
+    Info (17048): Logic cell "Ball:Ball_inst|Ball_S[0]"
+    Info (17048): Logic cell "Ball:Ball_inst|Ball_S[1]"
+    Info (17048): Logic cell "Ball:Ball_inst|Ball_S[2]"
+    Info (17048): Logic cell "Ball:Ball_inst|Ball_S[3]"
+    Info (17048): Logic cell "Ball:Ball_inst|Ball_S[4]"
+    Info (17048): Logic cell "Ball:Ball_inst|Ball_S[5]"
+    Info (17048): Logic cell "Ball:Ball_inst|Ball_S[6]"
+    Info (17048): Logic cell "Ball:Ball_inst|Ball_S[7]"
+Info (144001): Generated suppressed messages file D:/Project/Verilog/VGA_Ball/output_files/VGA_Ball.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 1175 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 9 output pins
+    Info (21061): Implemented 1151 logic cells
+    Info (21062): Implemented 5 DSP elements
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 82 warnings
+    Info: Peak virtual memory: 4648 megabytes
+    Info: Processing ended: Sun Sep 06 17:26:17 2020
+    Info: Elapsed time: 00:00:30
+    Info: Total CPU time (on all processors): 00:00:20
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/Project/Verilog/VGA_Ball/output_files/VGA_Ball.map.smsg.
+
+

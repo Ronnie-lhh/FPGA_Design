@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="M_Player">
+		<CBX_INST_ENTRY INSTANCE_NAME="|M_Player|pll_controller:pll_controller_inst|altpll:altpll_component" CBX_FILE_NAME="pll_controller_altpll.v"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|M_Player|rom_controller:rom_controller_inst|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_hjc1.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

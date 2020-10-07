@@ -1,0 +1,9 @@
+
+State Machine - |VGA_Ball|arykeyscan:arykeyscan_inst|cstate
+Name cstate.K_CHCK cstate.K_H4OL cstate.K_H3OL cstate.K_H2OL cstate.K_H1OL cstate.K_IDLE 
+cstate.K_IDLE 0 0 0 0 0 0 
+cstate.K_H1OL 0 0 0 0 1 1 
+cstate.K_H2OL 0 0 0 1 0 1 
+cstate.K_H3OL 0 0 1 0 0 1 
+cstate.K_H4OL 0 1 0 0 0 1 
+cstate.K_CHCK 1 0 0 0 0 1 
